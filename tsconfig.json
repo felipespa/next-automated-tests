@@ -8,9 +8,10 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
@@ -26,12 +27,13 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "types.d.ts",
-    ".next/types/**/*.ts"
-  ],
+  "ts-node": {
+    "compilerOptions": {
+      "esm": true,
+      "module": "esnext",
+      "moduleResolution": "bundler"
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts", ".next/types/**/*.ts", "cypress.config.ts"],
   "exclude": ["node_modules"]
 }
